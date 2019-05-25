@@ -1,12 +1,16 @@
 68 Facial Landmarks Shape Predictor(Easy Use)
 ===============
-This repo aims at shorten your developing time in face detection and alignment. 
+This repo is aimed at shorten your developing time in face detection and alignment. 
 
 I used [dlib](http://dlib.net/) to perform face detection and landmarks alignment. And refer to <https://github.com/codeniko/shape_predictor_81_face_landmarks> for 81 points landmarks alignment.
+
+
 
 ### Pre-trained Dlib model(official release)
 
 Please download the pre-trained model from [shape_predictor_68_face_landmarks.dat](<http://sourceforge.net/projects/dclib/files/dlib/v18.10/shape_predictor_68_face_landmarks.dat.bz2>) and extract it to `dlibmodels` directory.
+
+
 
 ### Requirements
 
@@ -16,9 +20,11 @@ dlib>=19.14.0
 numpy
 ```
 
+
+
 ### Usage
 
-In this work, a easy-use face detector is build. `refer to dlibpp.py`. To detect from a image, just run:
+In this work, a easy-use face detector is build. refer to `dlibpp.py`. To detect from a image, just run:
 
 ```python
 fd = dlibpp.DLIBPP()
@@ -67,5 +73,9 @@ cv2.destroyAllWindows()
 
 
 
+### Acknowledgement
 
+* Thanks for open source code from [Dlib]()
+* Thanks for [codeniko](https://github.com/codeniko/shape_predictor_81_face_landmarks) for his fantastic 81 landmarks alignment work.
 
+Thanks for your interest in this repo. If you work or research benefit from this repo, please cite it , start it and popularize it 😃
