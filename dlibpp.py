@@ -165,27 +165,4 @@ class DLIBPP(object):
         five_marks[3] = np.mean(np.stack([landmarks[48],landmarks[60]], axis=0), axis=0)
         five_marks[4] = np.mean(np.stack([landmarks[54],landmarks[64]], axis=0), axis=0)
 
-        return five_marks
-
-    def prewhiten(self, x):
-        mean = np.mean(x)
-        std = np.std(x)
-        std_adj = np.maximum(std, 1.0 / np.sqrt(x.size))
-        y = np.multiply(np.subtract(x, mean), 1 / std_adj)
-        return y
-
-    def __rotate__(self, image, angle, center=None, scale=1.0):
-
-        (h, w) = image.shape[:2]  # 2
-        if center is None:  # 3
-            center = (w // 2, h // 2)  # 4
-        M = cv2.getRotationMatrix2D(center, angle, scale)  # 5
-
-        rotated = cv2.warpAffine(image, M, (w, h))  # 6
-        return rotated  # 7
-
-    def __align_rotate__(self, image, pts, scale=1.0):
-        angle = np.arctan((pts[5] - pts[6]) / (pts[0] - pts[1])) / 3.14159 * 180
-        newimg = self.__rotate__(image, angle, (pts[2], pts[7]), scale)
-
-        return newimg
+        return five_mark
